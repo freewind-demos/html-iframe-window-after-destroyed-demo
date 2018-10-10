@@ -1,8 +1,12 @@
-Html Hello World Demo
-=====================
+HTML IFrame "window" after Destroyed Demo
+==========================================
+
+如果一个iframe从页面中移除了，那么之前取得的它的`contentWindow`还将继续存在，只是其`.frameElement`将变为`null`
 
 ```
-open index.html
+npm run demo
 ```
 
-You will see `Hello, World!` on page.
+![demo1](./images/demo1.jpg)
+
+![demo2](./images/demo2.jpg)

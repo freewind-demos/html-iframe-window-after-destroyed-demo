@@ -3,6 +3,25 @@
 <head>
 </head>
 <body>
-<div>Hello, World!</div>
+<h1>Top</h1>
+<iframe id="inner" src="./inner.html" onload="repeatHello()"></iframe>
+<div>
+  <button type="button" onclick="removeIframe()">Remove iframe</button>
+</div>
+<script>
+  function removeIframe() {
+    document.getElementById('inner').remove()
+  }
+
+  function repeatHello() {
+    const inner = document.getElementById('inner');
+    const innerWindow = inner.contentWindow;
+    setInterval(function () {
+      const main = innerWindow.document.getElementById('main');
+      console.log(main.innerText);
+      console.log('innerWindow.frameElement', innerWindow.frameElement)
+    }, 1000)
+  }
+</script>
 </body>
 </html>
